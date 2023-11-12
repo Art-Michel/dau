@@ -1,4 +1,4 @@
-// GameTest.cpp
+// DAU.cpp
 #include "stdafx.h"
 #include <windows.h> 
 #include <math.h>  
