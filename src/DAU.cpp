@@ -3,23 +3,23 @@
 #include <windows.h> 
 #include <math.h>  
 #include "app\app.h"
-#include "player.h"
+#include "Entity.h"
 
-Player player = Player(400.0f, 400.0f);
+Entity _entity = Entity(400.0f, 400.0f);
 
 void Init()
 {
-	player.Init();
+	_entity.Init();
 }
 
 void Update(float deltaTime)
 {
-	player.Update(deltaTime);
+	_entity.Update(deltaTime);
 }
 
 void Render()
 {
-	player.Draw();
+	_entity.Draw();
 }
 
 void Shutdown()
