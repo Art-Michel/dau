@@ -77,8 +77,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>.\glut;$(IncludePath)</IncludePath>
-    <LibraryPath>.\glut\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>.\glut;C:\freeglut\lib\x64;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\DAU\ExampleProject\src\glut\include\GL;.\glut\lib\x64;$(LibraryPath)</LibraryPath>
     <ExecutablePath>$(ExecutablePath)</ExecutablePath>
     <OutDir>$(SolutionDir)Builds\Release\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)Builds\Intermediate\$(Platform)\$(Configuration)\</IntDir>
@@ -91,8 +91,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>.\glut;$(IncludePath)</IncludePath>
-    <LibraryPath>.\glut\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>.\glut;C:\freeglut\lib\x64;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\DAU\ExampleProject\src\glut\include\GL;.\glut\lib\x64;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)Builds\Release\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)Builds\Intermediate\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
