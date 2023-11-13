@@ -8,9 +8,10 @@ public:
 
 	void Init();
 	void Update(float delta);
+	void Draw();
 
 private:
 	float posX;
 	float posY;
-	CSimpleSprite *sprite;
+	CSimpleSprite* sprite;
 };

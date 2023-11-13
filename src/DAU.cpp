@@ -5,7 +5,7 @@
 #include "app\app.h"
 #include "player.h"
 
-Player player = Player(400, 400);
+Player player = Player(400.0f, 400.0f);
 
 void Init()
 {
@@ -19,7 +19,7 @@ void Update(float deltaTime)
 
 void Render()
 {
-
+	player.Draw();
 }
 
 void Shutdown()
