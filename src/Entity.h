@@ -7,7 +7,7 @@ public:
 	Entity(float x, float y);
 
 	void Init();
-	void Update(float delta);
+	void Update(const float delta);
 	void Draw();
 
 private:

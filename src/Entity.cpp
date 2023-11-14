@@ -16,7 +16,7 @@ void Entity::Init()
 	_sprite->SetScale(1.0f);
 }
 
-void Entity::Update(float delta)
+void Entity::Update(const float delta)
 {
 	_sprite->Update(delta);
 }
