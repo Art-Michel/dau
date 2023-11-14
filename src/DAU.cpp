@@ -3,23 +3,23 @@
 #include <windows.h> 
 #include <math.h>  
 #include "app\app.h"
-#include "Entity.h"
+#include "entity.h"
 
-Entity _entity = Entity(400.0f, 400.0f);
+entity _entity = entity(400.0f, 400.0f);
 
 void Init()
 {
-	_entity.Init();
+	_entity.init();
 }
 
 void Update(float deltaTime)
 {
-	_entity.Update(deltaTime);
+	_entity.update(deltaTime);
 }
 
 void Render()
 {
-	_entity.Draw();
+	_entity.draw();
 }
 
 void Shutdown()
@@ -38,7 +38,7 @@ void Shutdown()
 //};
 //
 //
-//																			void Init()
+//																			void init()
 //{
 //	// Example Sprite Code....
 //	testSprite = App::CreateSprite(".\\TestData\\Test.bmp", 8, 4);
@@ -51,10 +51,10 @@ void Shutdown()
 //	testSprite->SetScale(1.0f);
 //}
 //
-//																			void Update(float deltaTime)
+//																			void update(float deltaTime)
 //{
 //	// Example Sprite Code....
-//	testSprite->Update(deltaTime);
+//	testSprite->update(deltaTime);
 //	if (App::GetController().GetLeftThumbStickX() > 0.5f)
 //	{
 //		testSprite->SetAnimation(ANIM_RIGHT);
@@ -122,7 +122,7 @@ void Shutdown()
 //																			void Render()
 //{	
 //	// Example Sprite Code....
-//	testSprite->Draw();
+//	testSprite->draw();
 //
 //	// Example Text.
 //	App::Print(100, 100, "BOTTOM TEXT");

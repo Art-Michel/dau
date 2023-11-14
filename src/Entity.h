@@ -1,17 +1,17 @@
 ﻿#pragma once
 #include "App/SimpleSprite.h"
 
-class Entity
+class entity
 {
 public:
-	Entity(float x, float y);
+	entity(float x, float y);
 
-	void Init();
-	void Update(const float delta);
-	void Draw();
+	void init();
+	void update(float delta);
+	void draw();
 
 private:
-	float _posX;
-	float _posY;
-	CSimpleSprite* _sprite;
+	float pos_x_;
+	float pos_y_;
+	CSimpleSprite* sprite_;
 };

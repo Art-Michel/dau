@@ -1,3 +1,77 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="DAU.cpp">
+      <Filter>Source Code</Filter>
+    </ClCompile>
+    <ClCompile Include="entity.cpp">
+      <Filter>Source Code</Filter>
+    </ClCompile>
+    <ClCompile Include="App\app.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="App\main.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="App\SimpleController.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="App\SimpleSound.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="App\SimpleSprite.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="stb_image\stb_image.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="entity.h">
+      <Filter>Source Code</Filter>
+    </ClInclude>
+    <ClInclude Include="App\app.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="App\AppSettings.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="App\main.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="App\SimpleController.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="App\SimpleSound.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="App\SimpleSprite.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="stb_image\stb_image.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Code">
+      <UniqueIdentifier>{2305d13d-203c-41dd-9269-6ce4a9878384}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{5521d0c5-1b62-4dec-8471-3a9249db521b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt">
+      <Filter>Engine</Filter>
+    </Text>
+  </ItemGroup>
 </Project>

@@ -25,7 +25,7 @@ namespace App
 	//-------------------------------------------------------------------------------------------
 	// void DrawLine( float sx, float sy, float ex, float ey, float r = 1.0f, float g = 1.0f, float b = 1.0f );
 	//-------------------------------------------------------------------------------------------
-	// Draw a 2D Line from sx,sy to ex, ey using color r = red, g = green, b=blue.
+	// draw a 2D Line from sx,sy to ex, ey using color r = red, g = green, b=blue.
 	//-------------------------------------------------------------------------------------------
 	void DrawLine( float sx, float sy, float ex, float ey, float r = 1.0f, float g = 1.0f, float b = 1.0f );
 

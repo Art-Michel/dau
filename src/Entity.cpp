@@ -1,27 +1,27 @@
 ﻿#include "stdafx.h"
-#include "Entity.h"
+#include "entity.h"
 #include "App/app.h"
 
-Entity::Entity(float x, float y)
+entity::entity(float x, float y)
 {
-	_posX = x;
-	_posY = y;
-	_sprite = nullptr;
+	pos_x_ = x;
+	pos_y_ = y;
+	sprite_ = nullptr;
 }
 
-void Entity::Init()
+void entity::init()
 {
-	_sprite = App::CreateSprite(".\\Sprites\\Square.png", 1, 1);
-	_sprite->SetPosition(_posX, _posY);
-	_sprite->SetScale(1.0f);
+	sprite_ = App::CreateSprite(".\\Sprites\\Square.png", 1, 1);
+	sprite_->SetPosition(pos_x_, pos_y_);
+	sprite_->SetScale(1.0f);
 }
 
-void Entity::Update(const float delta)
+void entity::update(const float delta)
 {
-	_sprite->Update(delta);
+	sprite_->Update(delta);
 }
 
-void Entity::Draw()
+void entity::draw()
 {
-	_sprite->Draw();
+	sprite_->Draw();
 }
