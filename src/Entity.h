@@ -1,10 +1,10 @@
 ﻿#pragma once
 #include "App/SimpleSprite.h"
 
-class entity
+class Entity
 {
 public:
-	entity(float x, float y);
+	Entity(float x, float y);
 
 	void init();
 	void update(float delta);

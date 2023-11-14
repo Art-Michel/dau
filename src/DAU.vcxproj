@@ -187,7 +187,9 @@
     <ClInclude Include="App\SimpleController.h" />
     <ClInclude Include="App\SimpleSound.h" />
     <ClInclude Include="App\SimpleSprite.h" />
+    <ClInclude Include="core.h" />
     <ClInclude Include="entity.h" />
+    <ClInclude Include="inputs.h" />
     <ClInclude Include="stb_image\stb_image.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
@@ -200,6 +202,7 @@
     <ClCompile Include="App\SimpleSprite.cpp" />
     <ClCompile Include="DAU.cpp" />
     <ClCompile Include="entity.cpp" />
+    <ClCompile Include="inputs.cpp" />
     <ClCompile Include="stb_image\stb_image.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

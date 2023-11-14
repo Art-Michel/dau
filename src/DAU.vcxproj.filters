@@ -28,6 +28,9 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
+    <ClCompile Include="inputs.cpp">
+      <Filter>Source Code</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="entity.h">
@@ -59,6 +62,12 @@
     </ClInclude>
     <ClInclude Include="targetver.h">
       <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="inputs.h">
+      <Filter>Source Code</Filter>
+    </ClInclude>
+    <ClInclude Include="core.h">
+      <Filter>Source Code</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

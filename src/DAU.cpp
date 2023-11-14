@@ -2,24 +2,32 @@
 #include "stdafx.h"
 #include <windows.h> 
 #include <math.h>  
+#include <string>
+
 #include "app\app.h"
 #include "entity.h"
+#include "inputs.h"
 
-entity _entity = entity(400.0f, 400.0f);
+Entity entity = Entity(400.0f, 400.0f);
+Inputs inputs = Inputs();
 
 void Init()
 {
-	_entity.init();
+	entity.init();
 }
 
 void Update(float deltaTime)
 {
-	_entity.update(deltaTime);
+	inputs.register_inputs();
+	entity.update(deltaTime);
 }
 
 void Render()
 {
-	_entity.draw();
+	entity.draw();
+
+	std::string str = "x: " + std::to_string(inputs.get_inputs().x) + "\n y: " + std::to_string(inputs.get_inputs().y);
+	App::Print(100, 100, str.c_str());
 }
 
 void Shutdown()
