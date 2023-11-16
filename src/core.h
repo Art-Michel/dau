@@ -13,12 +13,12 @@ struct vec2
 		this->y = y;
 	}
 
-	float magnitude()
+	float magnitude() const
 	{
 		return sqrtf((x * x) + (y * y));
 	}
 
-	vec2 normalized()
+	vec2 normalized() const
 	{
 		float mag = magnitude();
 		return {x/mag,y/mag};
@@ -35,7 +35,7 @@ struct vec2
 	}
 };
 
-float dot(vec2 a, vec2 b);
+float dot(const vec2& a, const vec2& b);
 
 float clamp(float min, float max, float i);
 float clamp01(float i);
