@@ -1,14 +1,15 @@
 #pragma once
-#include "core.h";
+#include "core.h"
 #include "inputs.h"
 #include "entity.h"
 
 class Player : public Entity
 {
 public:
-	Player();
+	Player() = default;
 	Inputs inputs;
 
-	void init(const vec2& pos);
-	void update(float delta);
+	void init(const vec2& pos) override;
+	void update(float delta) override;
+	void draw() override;
 };

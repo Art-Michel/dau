@@ -4,26 +4,25 @@
 #include "app\app.h"
 #include "entity.h"
 #include "player.h"
-#include "inputs.h"
 
 Entity entity = Entity();
 Player player = Player();
 
 void Init()
 {
-	entity.init(vec2(0,0));
-	player.init(vec2(0,0));
+	//entity.init(vec2(200,200));
+	player.init(vec2(400,400));
 }
 
 void Update(float deltaTime)
 {
-	entity.update(deltaTime);
+	//entity.update(deltaTime);
 	player.update(deltaTime);
 }
 
 void Render()
 {
-	entity.draw();
+	//entity.draw();
 	player.draw();
 
 	//std::string str = "x: " + std::to_string(inputs.get_inputs().x) + "\n y: " + std::to_string(inputs.get_inputs().y);

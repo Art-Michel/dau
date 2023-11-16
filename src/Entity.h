@@ -6,8 +6,7 @@
 class Entity
 {
 public:
-	virtual ~Entity();
-	Entity();
+	Entity(); 
 	virtual void init(const vec2& pos);
 	virtual void update(float delta);
 	virtual void draw();

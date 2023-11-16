@@ -1,7 +1,10 @@
 #include "stdafx.h"
 #include "player.h"
 
-Player::Player() = default;
+#include <string>
+
+#include "app\app.h"
+
 
 void Player::init(const vec2& pos)
 {
@@ -12,6 +15,16 @@ void Player::init(const vec2& pos)
 void Player::update(float delta)
 {
 	inputs.register_inputs();
-	velocity_ = inputs.get_inputs();
+	//velocity_ = { 1,1 };
+	velocity_ = {inputs.get_inputs()};
+	//velocity_ = { std::numeric_limits<float>::quiet_NaN(), std::numeric_limits<float>::quiet_NaN()};
+	
 	Entity::update(delta);
+}
+
+void Player::draw()
+{
+	App::Print(100, 100, ("Thumbstick X= " + std::to_string(velocity_.x)).c_str());
+	App::Print(100, 80, ("Thumbstick Y= " + std::to_string(velocity_.y)).c_str());
+	Entity::draw();
 }
