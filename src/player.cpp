@@ -15,10 +15,8 @@ void Player::init(const vec2& pos)
 void Player::update(float delta)
 {
 	inputs.register_inputs();
-	//velocity_ = { 1,1 };
-	velocity_ = {inputs.get_inputs()};
-	//velocity_ = { std::numeric_limits<float>::quiet_NaN(), std::numeric_limits<float>::quiet_NaN()};
-	
+	velocity_ = { inputs.get_inputs() };
+
 	Entity::update(delta);
 }
 

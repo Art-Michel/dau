@@ -11,7 +11,7 @@ Player player = Player();
 void Init()
 {
 	//entity.init(vec2(200,200));
-	player.init(vec2(400,400));
+	player.init(vec2(400, 400));
 }
 
 void Update(float deltaTime)
@@ -34,7 +34,7 @@ void Render()
 
 void Shutdown()
 {
-	
+
 }
 
 //// Example data....

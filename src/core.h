@@ -20,13 +20,25 @@ struct vec2
 
 	float magnitude() const
 	{
+		if (x == 0)
+		{
+			if (y == 0)
+				return 1;
+			return y;
+		}
+		if (y == 0)
+		{
+			if (x == 0)
+				return 1;
+			return x;
+		}
 		return sqrtf((x * x) + (y * y));
 	}
 
 	vec2 normalized() const
 	{
 		float mag = magnitude();
-		return {x/mag,y/mag};
+		return { x / mag,y / mag };
 	}
 
 	vec2 operator *(const float& f) const
@@ -46,7 +58,7 @@ struct vec2
 
 	vec2 add(const vec2& v, const vec2& v2)
 	{
-		return vec2{v.x + v2.x, v.y + v2.y};
+		return vec2{ v.x + v2.x, v.y + v2.y };
 	}
 };
 
