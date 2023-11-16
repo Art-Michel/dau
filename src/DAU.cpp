@@ -1,36 +1,36 @@
 // DAU.cpp
 #include "stdafx.h"
-#include <windows.h> 
-#include <math.h>  
 #include <string>
-
 #include "app\app.h"
 #include "entity.h"
+#include "player.h"
 #include "inputs.h"
 
-Entity entity = Entity(400.0f, 400.0f);
-Inputs inputs = Inputs();
+Entity entity = Entity();
+Player player = Player();
 
 void Init()
 {
-	entity.init();
+	entity.init(vec2(0,0));
+	player.init(vec2(0,0));
 }
 
 void Update(float deltaTime)
 {
-	inputs.register_inputs();
 	entity.update(deltaTime);
+	player.update(deltaTime);
 }
 
 void Render()
 {
 	entity.draw();
+	player.draw();
 
-	std::string str = "x: " + std::to_string(inputs.get_inputs().x) + "\n y: " + std::to_string(inputs.get_inputs().y);
-	App::Print(100, 100, str.c_str());
+	//std::string str = "x: " + std::to_string(inputs.get_inputs().x) + "\n y: " + std::to_string(inputs.get_inputs().y);
+	//App::Print(100, 100, str.c_str());
 
-	std::string str2 = "length: " + std::to_string(inputs.get_inputs().magnitude());
-	App::Print(100, 60, str2.c_str());
+	//std::string str2 = "length: " + std::to_string(inputs.get_inputs().magnitude());
+	//App::Print(100, 60, str2.c_str());
 }
 
 void Shutdown()

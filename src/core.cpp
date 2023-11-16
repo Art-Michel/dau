@@ -1,12 +1,12 @@
 #include "stdafx.h"
 #include "core.h"
 
-float dot(vec2 a, vec2 b)
+float dot(const vec2& a, const vec2& b)
 {
 	return 1;
 }
 
-float clamp(float min, float max, float i)
+float clamp(const float& min, const float& max, const float& i)
 {
 	if (i > max)
 		return max;
@@ -16,7 +16,7 @@ float clamp(float min, float max, float i)
 		return i;
 }
 
-float clamp01(float i)
+float clamp01(const float& i)
 {
 	return clamp(0, 1, i);
 }

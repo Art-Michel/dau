@@ -1,17 +1,19 @@
 ﻿#pragma once
+#include "stdafx.h"
 #include "App/SimpleSprite.h"
+#include "core.h"
 
 class Entity
 {
 public:
-	Entity(float x, float y);
+	virtual ~Entity();
+	Entity();
+	virtual void init(const vec2& pos);
+	virtual void update(float delta);
+	virtual void draw();
 
-	void init();
-	void update(float delta);
-	void draw();
-
-private:
-	float pos_x_;
-	float pos_y_;
+protected:
+	vec2 pos_;
+	vec2 velocity_;
 	CSimpleSprite* sprite_;
 };

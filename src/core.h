@@ -1,6 +1,6 @@
 #pragma once
+#include "stdafx.h"
 #include <corecrt_math.h>
-#include "Entity.h"
 
 struct vec2
 {
@@ -11,6 +11,11 @@ struct vec2
 	{
 		this->x = x;
 		this->y = y;
+	}
+	vec2()
+	{
+		this->x = 0.0f;
+		this->y = 0.0f;
 	}
 
 	float magnitude() const
@@ -33,9 +38,19 @@ struct vec2
 	{
 		return { v.x * f, v.y * f };
 	}
+
+	vec2 operator +(const vec2& v)
+	{
+		return add(v, *this);
+	}
+
+	vec2 add(const vec2& v, const vec2& v2)
+	{
+		return vec2{v.x + v2.x, v.y + v2.y};
+	}
 };
 
 float dot(const vec2& a, const vec2& b);
 
-float clamp(float min, float max, float i);
-float clamp01(float i);
+float clamp(const float& min, const float& max, const float& i);
+float clamp01(const float& i);

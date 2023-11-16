@@ -34,6 +34,9 @@
     <ClCompile Include="core.cpp">
       <Filter>Source Code</Filter>
     </ClCompile>
+    <ClCompile Include="player.cpp">
+      <Filter>Source Code</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="entity.h">
@@ -70,6 +73,9 @@
       <Filter>Source Code</Filter>
     </ClInclude>
     <ClInclude Include="core.h">
+      <Filter>Source Code</Filter>
+    </ClInclude>
+    <ClInclude Include="player.h">
       <Filter>Source Code</Filter>
     </ClInclude>
   </ItemGroup>

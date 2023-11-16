@@ -2,22 +2,25 @@
 #include "entity.h"
 #include "App/app.h"
 
-Entity::Entity(float x, float y)
+Entity::Entity() :
+	pos_(),
+	velocity_(),
+	sprite_()
 {
-	pos_x_ = x;
-	pos_y_ = y;
-	sprite_ = nullptr;
 }
 
-void Entity::init()
+void Entity::init(const vec2& pos)
 {
+	pos_ = pos;
 	sprite_ = App::CreateSprite(".\\Sprites\\Square.png", 1, 1);
-	sprite_->SetPosition(pos_x_, pos_y_);
+	sprite_->SetPosition(pos_.x, pos_.y);
 	sprite_->SetScale(1.0f);
 }
 
 void Entity::update(const float delta)
 {
+	pos_ = pos_ + velocity_;
+	sprite_->SetPosition(pos_.x, pos_.y);
 	sprite_->Update(delta);
 }
 
