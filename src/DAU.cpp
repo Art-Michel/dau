@@ -28,6 +28,9 @@ void Render()
 
 	std::string str = "x: " + std::to_string(inputs.get_inputs().x) + "\n y: " + std::to_string(inputs.get_inputs().y);
 	App::Print(100, 100, str.c_str());
+
+	std::string str2 = "length: " + std::to_string(inputs.get_inputs().magnitude());
+	App::Print(100, 60, str2.c_str());
 }
 
 void Shutdown()
