@@ -19,7 +19,7 @@ void Entity::init(const vec2& pos)
 
 void Entity::update(const float delta)
 {
-	pos_ = pos_ + velocity_;
+	pos_ = pos_ + velocity_ * delta;
 	sprite_->SetPosition(pos_.x, pos_.y);
 	sprite_->Update(delta);
 }
