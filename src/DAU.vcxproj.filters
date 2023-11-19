@@ -1,12 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="DAU.cpp">
-      <Filter>Source Code</Filter>
-    </ClCompile>
-    <ClCompile Include="entity.cpp">
-      <Filter>Source Code</Filter>
-    </ClCompile>
     <ClCompile Include="App\app.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
@@ -28,20 +22,27 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
-    <ClCompile Include="inputs.cpp">
-      <Filter>Source Code</Filter>
-    </ClCompile>
     <ClCompile Include="core.cpp">
-      <Filter>Source Code</Filter>
+      <Filter>Source Code\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="DAU.cpp">
+      <Filter>Source Code\Game</Filter>
     </ClCompile>
     <ClCompile Include="player.cpp">
-      <Filter>Source Code</Filter>
+      <Filter>Source Code\Entities</Filter>
     </ClCompile>
+    <ClCompile Include="tile.cpp">
+      <Filter>Source Code\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="entity.cpp">
+      <Filter>Source Code\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="inputs.cpp">
+      <Filter>Source Code\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="EntitiesManager.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="entity.h">
-      <Filter>Source Code</Filter>
-    </ClInclude>
     <ClInclude Include="App\app.h">
       <Filter>Engine</Filter>
     </ClInclude>
@@ -69,15 +70,22 @@
     <ClInclude Include="targetver.h">
       <Filter>Engine</Filter>
     </ClInclude>
-    <ClInclude Include="inputs.h">
-      <Filter>Source Code</Filter>
-    </ClInclude>
     <ClInclude Include="core.h">
-      <Filter>Source Code</Filter>
+      <Filter>Source Code\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="tile.h">
+      <Filter>Source Code\Entities</Filter>
     </ClInclude>
     <ClInclude Include="player.h">
-      <Filter>Source Code</Filter>
+      <Filter>Source Code\Entities</Filter>
     </ClInclude>
+    <ClInclude Include="entity.h">
+      <Filter>Source Code\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="inputs.h">
+      <Filter>Source Code\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="EntitiesManager.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Code">
@@ -85,6 +93,12 @@
     </Filter>
     <Filter Include="Engine">
       <UniqueIdentifier>{5521d0c5-1b62-4dec-8471-3a9249db521b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Code\Game">
+      <UniqueIdentifier>{ce530d6c-0c5d-4595-af1f-2cd655a89494}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Code\Entities">
+      <UniqueIdentifier>{a4e0dfca-d369-494c-909e-b478dd54e6ec}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

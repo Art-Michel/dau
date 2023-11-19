@@ -25,3 +25,4 @@ void Player::draw()
 	App::Print(100, 80, ("Thumbstick Y= " + std::to_string(velocity_.y)).c_str());
 	Entity::draw();
 }
+

@@ -12,4 +12,5 @@ public:
 	void init(const vec2& pos) override;
 	void update(float delta) override;
 	void draw() override;
+
 };

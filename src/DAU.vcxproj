@@ -190,6 +190,7 @@
     <ClInclude Include="App\SimpleSound.h" />
     <ClInclude Include="App\SimpleSprite.h" />
     <ClInclude Include="core.h" />
+    <ClInclude Include="EntitiesManager.h" />
     <ClInclude Include="entity.h" />
     <ClInclude Include="inputs.h" />
     <ClInclude Include="player.h" />
@@ -206,6 +207,7 @@
     <ClCompile Include="App\SimpleSprite.cpp" />
     <ClCompile Include="core.cpp" />
     <ClCompile Include="DAU.cpp" />
+    <ClCompile Include="EntitiesManager.cpp" />
     <ClCompile Include="entity.cpp" />
     <ClCompile Include="inputs.cpp" />
     <ClCompile Include="player.cpp" />
