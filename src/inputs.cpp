@@ -24,3 +24,4 @@ vec2 Inputs::get_inputs()
 	new_inputs = new_inputs.normalized() * clamp01(new_inputs.magnitude());
 	return new_inputs;
 }
+ 

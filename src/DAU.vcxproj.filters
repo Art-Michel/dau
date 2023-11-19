@@ -40,7 +40,9 @@
     <ClCompile Include="inputs.cpp">
       <Filter>Source Code\Game</Filter>
     </ClCompile>
-    <ClCompile Include="EntitiesManager.cpp" />
+    <ClCompile Include="EntitiesManager.cpp">
+      <Filter>Source Code\Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App\app.h">
@@ -85,7 +87,9 @@
     <ClInclude Include="inputs.h">
       <Filter>Source Code\Game</Filter>
     </ClInclude>
-    <ClInclude Include="EntitiesManager.h" />
+    <ClInclude Include="EntitiesManager.h">
+      <Filter>Source Code\Game</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Code">

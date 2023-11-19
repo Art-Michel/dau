@@ -4,26 +4,32 @@
 #include "app\app.h"
 #include "entity.h"
 #include "player.h"
+#include "EntitiesManager.h"
 
-Entity entity = Entity();
-Player player = Player();
+Entity entity;
+Player player;
 
 void Init()
 {
-	//entity.init(vec2(200,200));
+	entity = Entity();
+	player = Player();
+
 	player.init(vec2(400, 400));
+	auto* ent = static_cast<Entity*>(&player);
+	EntitiesManager::GetInstance()->entities.push_back(ent);
+
+	entity.init(vec2(200, 200));
+	EntitiesManager::GetInstance()->entities.push_back(&entity);
 }
 
 void Update(float deltaTime)
 {
-	//entity.update(deltaTime);
-	player.update(deltaTime);
+	EntitiesManager::GetInstance()->Update(deltaTime);
 }
 
 void Render()
 {
-	//entity.draw();
-	player.draw();
+	EntitiesManager::GetInstance()->Draw();
 
 	//std::string str = "x: " + std::to_string(inputs.get_inputs().x) + "\n y: " + std::to_string(inputs.get_inputs().y);
 	//App::Print(100, 100, str.c_str());
