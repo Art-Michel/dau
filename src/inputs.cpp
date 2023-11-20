@@ -15,6 +15,15 @@ void Inputs::register_inputs()
 	inputs_.y = App::GetController().GetLeftThumbStickY();
 	//if (inputs_.y > -0.3f && inputs_.y < 0.3f)
 	//	inputs_.y = 0.0f;
+
+	if (App::GetController().CheckButton(XINPUT_GAMEPAD_DPAD_LEFT, false))
+		inputs_.x -= 1;
+	if (App::GetController().CheckButton(XINPUT_GAMEPAD_DPAD_RIGHT, false))
+		inputs_.x += 1;
+	if (App::GetController().CheckButton(XINPUT_GAMEPAD_DPAD_DOWN, false))
+		inputs_.y -= 1;
+	if (App::GetController().CheckButton(XINPUT_GAMEPAD_DPAD_UP, false))
+		inputs_.y += 1;
 }
 
 vec2 Inputs::get_inputs()
@@ -24,4 +33,3 @@ vec2 Inputs::get_inputs()
 	new_inputs = new_inputs.normalized() * clamp01(new_inputs.magnitude());
 	return new_inputs;
 }
- 
