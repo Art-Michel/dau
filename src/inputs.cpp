@@ -29,7 +29,7 @@ void Inputs::register_inputs()
 vec2 Inputs::get_inputs()
 {
 	vec2 new_inputs = inputs_.normalized();
-	new_inputs = new_inputs * (abs(inputs_.x) + abs(inputs_.y));
+	new_inputs = new_inputs * ((abs(inputs_.x) + abs(inputs_.y)));
 	new_inputs = new_inputs.normalized() * clamp01(new_inputs.magnitude());
 	return new_inputs;
 }

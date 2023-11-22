@@ -23,13 +23,13 @@ struct vec2
 	{
 		if (x > -.0001f && x < .0001f)
 		{
-			if (y == 0)
+			if (x > -.0001f && x < .0001f)
 				return 1;
 			return std::fabs(y);
 		}
 		if (y > -.0001f && y < .0001f)
 		{
-			if (x == 0)
+			if (y > -.0001f && y < .0001f)
 				return 1;
 			return std::fabs(x);
 		}
