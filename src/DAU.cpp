@@ -5,6 +5,7 @@
 #include "entity.h"
 #include "player.h"
 #include "EntitiesManager.h"
+#include "imgui.h"
 
 Entity entity;
 Player player;
@@ -13,6 +14,7 @@ void Init()
 {
 	entity = Entity();
 	player = Player();
+	//ImGui::ShowDemoWindow();
 
 	player.init(vec2(400, 400));
 	auto* ent = static_cast<Entity*>(&player);

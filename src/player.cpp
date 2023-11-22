@@ -21,8 +21,9 @@ void Player::update(float delta)
 
 void Player::draw()
 {
-	App::Print(100, 100, ("Thumbstick X= " + std::to_string(velocity_.x)).c_str());
-	App::Print(100, 80, ("Thumbstick Y= " + std::to_string(velocity_.y)).c_str());
+	App::Print(100, 100, (std::to_string( (vec2{-1, 0} * 1).x) ).c_str());
+	//App::Print(100, 80, ("Thumbstick X= " + std::to_string(velocity_.x)).c_str());
+	//App::Print(100, 80, ("Thumbstick Y= " + std::to_string(velocity_.y)).c_str());
 	Entity::draw();
 }
 
