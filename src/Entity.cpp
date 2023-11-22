@@ -12,9 +12,9 @@ Entity::Entity() :
 void Entity::init(const vec2& pos)
 {
 	pos_ = pos;
-	sprite_ = App::CreateSprite(".\\Sprites\\Square.png", 1, 1);
+	sprite_ = App::CreateSprite(".\\Sprites\\char.png", 1, 1);
 	sprite_->SetPosition(pos_.x, pos_.y);
-	sprite_->SetScale(1.0f);
+	sprite_->SetScale(8.0f);
 }
 
 void Entity::update(const float delta)
