@@ -11,12 +11,15 @@ public:
 
 private:
 	Inputs inputs;
+	bool colliding;
 
 public:
-	void init(const vec2& pos, const std::string& path) override;
+	void init(const vec2& pos, const char* path) override;
 	void update(float delta) override;
 	void draw() override;
 
+
 private:
 	void check_collisions();
+	bool collided_with(const Entity& entity);
 };

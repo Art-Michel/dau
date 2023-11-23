@@ -10,15 +10,16 @@ class Entity
 {
 public:
 	Entity() = default;
-	virtual void init(const vec2& pos, const std::string& path);
+	virtual void init(const vec2& pos, const char* path);
 	virtual void update(float delta);
 	virtual void draw();
 
-protected:
+public:
 	vec2 pos_;
+	vec2 col_box_ = {32,32};
+
+protected:
 	vec2 velocity_;
 	CSimpleSprite* sprite_;
-	vec2 col_box_;
-	vec2 col_box_offset;
 	float speed_;
 };

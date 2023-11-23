@@ -8,10 +8,10 @@
 //{
 //}
 
-void Entity::init(const vec2& pos, const std::string& path)
+void Entity::init(const vec2& pos, const char* path)
 {
 	pos_ = pos;
-	sprite_ = App::CreateSprite(path.c_str(), 1, 1);
+	sprite_ = App::CreateSprite(path, 1, 1);
 	sprite_->SetPosition(pos_.x, pos_.y);
 	sprite_->SetScale(8.0f);
 	speed_ = 0;
