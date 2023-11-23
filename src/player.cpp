@@ -48,7 +48,8 @@ void Player::check_collisions()
 			continue;
 		if (collided_with(*e[i]))
 		{
-
+			this->velocity_ = {0,0};
+			i--;
 		}
 	}
 }
@@ -56,11 +57,11 @@ void Player::check_collisions()
 bool Player::collided_with(const Entity& entity)
 {
 	bool yesh =
-		this->pos_.x - this->col_box_.x < entity.pos_.x + entity.col_box_.x &&
-		this->pos_.x + this->col_box_.x > entity.pos_.x - entity.col_box_.x;
+		this->velocity_.x + this->pos_.x - this->col_box_.x < entity.pos_.x + entity.col_box_.x &&
+		this->velocity_.x + this->pos_.x + this->col_box_.x > entity.pos_.x - entity.col_box_.x;
 	bool yesv =
-		this->pos_.y - this->col_box_.y < entity.pos_.y + entity.col_box_.y &&
-		this->pos_.y + this->col_box_.y > entity.pos_.y - entity.col_box_.y;
+		this->velocity_.y + this->pos_.y - this->col_box_.y < entity.pos_.y + entity.col_box_.y &&
+		this->velocity_.y + this->pos_.y + this->col_box_.y > entity.pos_.y - entity.col_box_.y;
 
 	colliding = (yesh && yesv);
 	return colliding;
