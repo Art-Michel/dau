@@ -1,25 +1,25 @@
 ﻿#include "stdafx.h"
 #include "entity.h"
+
 #include "App/app.h"
 
-Entity::Entity() :
-	pos_(),
-	velocity_(),
-	sprite_()
-{
-}
+//Entity::Entity() :
+//	sprite_()
+//{
+//}
 
-void Entity::init(const vec2& pos)
+void Entity::init(const vec2& pos, const std::string& path)
 {
 	pos_ = pos;
-	sprite_ = App::CreateSprite(".\\Sprites\\char.png", 1, 1);
+	sprite_ = App::CreateSprite(path.c_str(), 1, 1);
 	sprite_->SetPosition(pos_.x, pos_.y);
 	sprite_->SetScale(8.0f);
+	speed_ = 0;
 }
 
 void Entity::update(const float delta)
 {
-	pos_ = pos_ + velocity_ * delta;
+	pos_ = pos_ + velocity_ * delta * speed_;
 	sprite_->SetPosition(pos_.x, pos_.y);
 	sprite_->Update(delta);
 }
