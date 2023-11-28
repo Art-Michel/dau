@@ -2,9 +2,7 @@
 #include <string>
 #include "app\app.h"
 #include "player.h"
-
 #include <algorithm>
-
 #include "EntitiesManager.h"
 
 
@@ -14,7 +12,7 @@ void Player::init(const vec2& pos, const char* path)
 	Entity::init(pos, path);
 	speed_ = 0.3f;
 
-	col_box_ = { 28,32 };
+	Colbox = { 28,32 };
 }
 
 void Player::update(float delta)
@@ -35,12 +33,21 @@ void Player::draw()
 
 	std::string mario = "Colliding: ";
 	mario += std::to_string(colliding);
-	App::Print(pos_.x - 50, pos_.y + 50, mario.c_str());
+	App::Print(Pos.x - 50, Pos.y + 50, mario.c_str());
 }
 
 void Player::check_collisions()
 {
 	std::vector<Entity*> e = EntitiesManager::GetInstance()->entities;
+
+	//std::sort(e.begin(), e.end(), [&playerPos](const Entity* entity1, const Entity* entity2)
+	//	{
+	//		return (entity1->Pos - playerPos).abs() < (entity1->GetPos() - playerPos).abs();
+	//	});
+
+	//std::find_if(entities.begin(), entities.end(), [&entityName](const Entity* entity) {
+	//	return entity.Name == entityName;
+	//	});
 
 	for (int i = 0; i < e.size(); i++)
 	{
@@ -48,7 +55,7 @@ void Player::check_collisions()
 			continue;
 		if (collided_with(*e[i]))
 		{
-			this->velocity_ = {0,0};
+			this->velocity_ = { 0,0 };
 			i--;
 		}
 	}
@@ -57,11 +64,11 @@ void Player::check_collisions()
 bool Player::collided_with(const Entity& entity)
 {
 	bool yesh =
-		this->velocity_.x + this->pos_.x - this->col_box_.x < entity.pos_.x + entity.col_box_.x &&
-		this->velocity_.x + this->pos_.x + this->col_box_.x > entity.pos_.x - entity.col_box_.x;
+		this->velocity_.x + this->Pos.x - this->Colbox.x < entity.Pos.x + entity.Colbox.x &&
+		this->velocity_.x + this->Pos.x + this->Colbox.x > entity.Pos.x - entity.Colbox.x;
 	bool yesv =
-		this->velocity_.y + this->pos_.y - this->col_box_.y < entity.pos_.y + entity.col_box_.y &&
-		this->velocity_.y + this->pos_.y + this->col_box_.y > entity.pos_.y - entity.col_box_.y;
+		this->velocity_.y + this->Pos.y - this->Colbox.y < entity.Pos.y + entity.Colbox.y &&
+		this->velocity_.y + this->Pos.y + this->Colbox.y > entity.Pos.y - entity.Colbox.y;
 
 	colliding = (yesh && yesv);
 	return colliding;

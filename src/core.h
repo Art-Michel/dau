@@ -61,6 +61,11 @@ struct vec2
 	{
 		return vec2{ v.x + v2.x, v.y + v2.y };
 	}
+
+	float dist(const vec2& v, const vec2& v2)
+	{
+		return 100;
+	}
 };
 
 float dot(const vec2& a, const vec2& b);

@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include "stdafx.h"
 
+#include <memory>
 #include <string>
 
 #include "App/SimpleSprite.h"
@@ -15,11 +16,12 @@ public:
 	virtual void draw();
 
 public:
-	vec2 pos_;
-	vec2 col_box_ = {32,32};
+	vec2 Pos;
+	vec2 Colbox = {32,32};
 
 protected:
 	vec2 velocity_;
 	CSimpleSprite* sprite_;
+	//std::unique_ptr<CSimpleSprite> sprite_;
 	float speed_;
 };
