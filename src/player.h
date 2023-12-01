@@ -22,4 +22,5 @@ public:
 private:
 	void check_collisions();
 	bool collided_with(const Entity& entity);
+	void resolve_collision(const Entity& entity);
 };

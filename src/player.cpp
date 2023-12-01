@@ -34,6 +34,7 @@ void Player::draw()
 	std::string mario = "Colliding: ";
 	mario += std::to_string(colliding);
 	App::Print(Pos.x - 50, Pos.y + 50, mario.c_str());
+	App::Print(Pos.x - 50, Pos.y + 100, (std::to_string((int)Pos.x) + " " + std::to_string((int)Pos.y)).c_str());
 }
 
 void Player::check_collisions()
@@ -55,7 +56,7 @@ void Player::check_collisions()
 			continue;
 		if (collided_with(*e[i]))
 		{
-			this->velocity_ = { 0,0 };
+			resolve_collision(*e[i]);
 			i--;
 		}
 	}
@@ -72,4 +73,21 @@ bool Player::collided_with(const Entity& entity)
 
 	colliding = (yesh && yesv);
 	return colliding;
+}
+
+void Player::resolve_collision(const Entity& entity)
+{
+	vec2 diff = (this->Pos - entity.Pos);
+	vec2 dir = diff.normalized();
+	vec2 dir2;
+	if (abs(dir.x) > abs(dir.y))
+	{
+		dir2 = { dir.x, 0 };
+		this->velocity_ = this->velocity_ + (diff + dir2.normalized() * (entity.Colbox.x / 2 + this->Colbox.x / 2 + 1)).normalized() * this->velocity_.magnitude();
+	}
+	else
+	{
+		dir2 = { 0, dir.y };
+		this->velocity_ = this->velocity_ + (diff + dir2.normalized() * (entity.Colbox.y / 2 + this->Colbox.y / 2 + 1)).normalized() * this->velocity_.magnitude();
+	}
 }

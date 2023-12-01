@@ -19,7 +19,7 @@ void Init()
 	auto* ent = static_cast<Entity*>(&player);
 	EntitiesManager::GetInstance()->entities.push_back(ent);
 
-	entity.init(vec2(200, 200), ".\\Sprites\\Square.png");
+	entity.init(vec2(500, 500), ".\\Sprites\\Square.png");
 	EntitiesManager::GetInstance()->entities.push_back(&entity);
 }
 
