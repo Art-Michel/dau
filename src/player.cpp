@@ -28,25 +28,31 @@ void Player::update(float delta)
 void Player::draw()
 {
 	Entity::draw();
-	App::Print(100, 100, ("Thumbstick X= " + std::to_string(velocity_.x)).c_str());
-	App::Print(100, 80, ("Thumbstick Y= " + std::to_string(velocity_.y)).c_str());
 
-	std::string mario = "Colliding: ";
-	mario += std::to_string(colliding);
-	App::Print(Pos.x - 50, Pos.y + 50, mario.c_str());
-	App::Print(Pos.x - 50, Pos.y + 100, (std::to_string((int)Pos.x) + " " + std::to_string((int)Pos.y)).c_str());
+	//Print la velocité
+	App::Print(100, 100, ("Vel X= " + std::to_string(velocity_.x)).c_str());
+	App::Print(100, 80, ("Vel Y= " + std::to_string(velocity_.y)).c_str());
 
-	//debug
-	std::vector<Entity*> e = EntitiesManager::GetInstance()->entities;
+	#pragma region 	//Print si on collisionne DEPRECATED, NE PRINTERA JAMAIS TRUE
+	//{
+	//	std::string mario = "Colliding: ";
+	//	mario += std::to_string(colliding);
+	//	App::Print(Pos.x - 50, Pos.y + 50, mario.c_str());
+	//	App::Print(Pos.x - 50, Pos.y + 100, (std::to_string((int)Pos.x) + " " + std::to_string((int)Pos.y)).c_str());
+	//}
+	#pragma endregion
 
-	App::Print(10, 300, (std::to_string((int)e[0]->Pos.x) + " | " + std::to_string((int)e[1]->Pos.x) + " | " + std::to_string((int)e[2]->Pos.x) + " | " + std::to_string((int)e[3]->Pos.x)).c_str());
-
-	std::sort(e.begin(), e.end(), [this](const Entity* a, const Entity* b)
-		{
-			return a->Dist_to_player() > b->Dist_to_player();
-		});
-
-	App::Print(30, 400, (std::to_string((int)e[0]->Pos.x) + " | " + std::to_string((int)e[1]->Pos.x) + " | " + std::to_string((int)e[2]->Pos.x) + " | " + std::to_string((int)e[3]->Pos.x)).c_str());
+	#pragma region 	//Print les entités par ordre de distance au joueur
+	//{
+	//	std::vector<Entity*> e = EntitiesManager::GetInstance()->entities;
+	//	App::Print(10, 400, (std::to_string((int)e[0]->Pos.x) + " | " + std::to_string((int)e[1]->Pos.x) + " | " + std::to_string((int)e[2]->Pos.x) + " | " + std::to_string((int)e[3]->Pos.x)).c_str());
+	//	std::sort(e.begin(), e.end(), [this](const Entity* a, const Entity* b)
+	//		{
+	//			return a->Dist_to_player() < b->Dist_to_player();
+	//		});
+	//	App::Print(30, 300, (std::to_string((int)e[0]->Pos.x) + " | " + std::to_string((int)e[1]->Pos.x) + " | " + std::to_string((int)e[2]->Pos.x) + " | " + std::to_string((int)e[3]->Pos.x)).c_str());
+	//}
+	#pragma endregion
 }
 
 void Player::check_collisions()
@@ -55,7 +61,7 @@ void Player::check_collisions()
 
 	std::sort(e.begin(), e.end(), [this](const Entity* a, const Entity* b)
 		{
-			return a->Dist_to_player() > b->Dist_to_player();
+			return a->Dist_to_player() < b->Dist_to_player();
 		});
 
 	for (int i = 0; i < e.size(); i++)
