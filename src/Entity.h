@@ -17,7 +17,8 @@ public:
 
 public:
 	vec2 Pos;
-	vec2 Colbox = {32,32};
+	vec2 Colbox = { 32,32 };
+	float Dist_to_player() const;
 
 protected:
 	vec2 velocity_;

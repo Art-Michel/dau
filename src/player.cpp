@@ -27,28 +27,36 @@ void Player::update(float delta)
 
 void Player::draw()
 {
+	Entity::draw();
 	App::Print(100, 100, ("Thumbstick X= " + std::to_string(velocity_.x)).c_str());
 	App::Print(100, 80, ("Thumbstick Y= " + std::to_string(velocity_.y)).c_str());
-	Entity::draw();
 
 	std::string mario = "Colliding: ";
 	mario += std::to_string(colliding);
 	App::Print(Pos.x - 50, Pos.y + 50, mario.c_str());
 	App::Print(Pos.x - 50, Pos.y + 100, (std::to_string((int)Pos.x) + " " + std::to_string((int)Pos.y)).c_str());
+
+	//debug
+	std::vector<Entity*> e = EntitiesManager::GetInstance()->entities;
+
+	App::Print(10, 300, (std::to_string((int)e[0]->Pos.x) + " | " + std::to_string((int)e[1]->Pos.x) + " | " + std::to_string((int)e[2]->Pos.x) + " | " + std::to_string((int)e[3]->Pos.x)).c_str());
+
+	std::sort(e.begin(), e.end(), [this](const Entity* a, const Entity* b)
+		{
+			return a->Dist_to_player() > b->Dist_to_player();
+		});
+
+	App::Print(30, 400, (std::to_string((int)e[0]->Pos.x) + " | " + std::to_string((int)e[1]->Pos.x) + " | " + std::to_string((int)e[2]->Pos.x) + " | " + std::to_string((int)e[3]->Pos.x)).c_str());
 }
 
 void Player::check_collisions()
 {
 	std::vector<Entity*> e = EntitiesManager::GetInstance()->entities;
 
-	//std::sort(e.begin(), e.end(), [&playerPos](const Entity* entity1, const Entity* entity2)
-	//	{
-	//		return (entity1->Pos - playerPos).abs() < (entity1->GetPos() - playerPos).abs();
-	//	});
-
-	//std::find_if(entities.begin(), entities.end(), [&entityName](const Entity* entity) {
-	//	return entity.Name == entityName;
-	//	});
+	std::sort(e.begin(), e.end(), [this](const Entity* a, const Entity* b)
+		{
+			return a->Dist_to_player() > b->Dist_to_player();
+		});
 
 	for (int i = 0; i < e.size(); i++)
 	{
@@ -83,11 +91,11 @@ void Player::resolve_collision(const Entity& entity)
 	if (abs(dir.x) > abs(dir.y))
 	{
 		dir2 = { dir.x, 0 };
-		this->velocity_ = this->velocity_ + (diff + dir2.normalized() * (entity.Colbox.x / 2 + this->Colbox.x / 2 + 1)).normalized() * this->velocity_.magnitude();
+		this->velocity_ = this->velocity_ + dir2.normalized() * this->velocity_.magnitude();
 	}
 	else
 	{
 		dir2 = { 0, dir.y };
-		this->velocity_ = this->velocity_ + (diff + dir2.normalized() * (entity.Colbox.y / 2 + this->Colbox.y / 2 + 1)).normalized() * this->velocity_.magnitude();
+		this->velocity_ = this->velocity_ + dir2.normalized() * this->velocity_.magnitude();
 	}
 }

@@ -8,11 +8,15 @@
 #include "imgui.h"
 
 Entity entity;
+Entity entity2;
+Entity entity3;
 Player player;
 
 void Init()
 {
 	entity = Entity();
+	entity2 = Entity();
+	entity3 = Entity();
 	player = Player();
 
 	player.init(vec2(400, 400), ".\\Sprites\\char.png");
@@ -20,7 +24,11 @@ void Init()
 	EntitiesManager::GetInstance()->entities.push_back(ent);
 
 	entity.init(vec2(500, 500), ".\\Sprites\\Square.png");
+	entity2.init(vec2(500, 600), ".\\Sprites\\Square.png");
+	entity3.init(vec2(600, 600), ".\\Sprites\\Square.png");
 	EntitiesManager::GetInstance()->entities.push_back(&entity);
+	EntitiesManager::GetInstance()->entities.push_back(&entity2);
+	EntitiesManager::GetInstance()->entities.push_back(&entity3);
 }
 
 void Update(float deltaTime)

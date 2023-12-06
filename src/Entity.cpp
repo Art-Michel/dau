@@ -1,6 +1,6 @@
 ﻿#include "stdafx.h"
 #include "entity.h"
-
+#include "EntitiesManager.h"
 #include "App/app.h"
 
 //Entity::Entity() :
@@ -27,4 +27,9 @@ void Entity::update(const float delta)
 void Entity::draw()
 {
 	sprite_->Draw();
+}
+
+float Entity::Dist_to_player() const
+{
+	return (EntitiesManager::GetInstance()->entities[0]->Pos - this->Pos).magnitude();
 }
