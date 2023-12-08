@@ -6,12 +6,19 @@
 class State
 {
 public:
+	Player player;
 	std::string Name;
 
+private:
+
 public:
-	void Begin();
-	void Update();
-	void End();
+	State(std::string name)
+	{
+		this->Name = name;
+	}
+	virtual void Begin();
+	virtual void Update();
+	virtual void End();
 };
 
 class FSM
@@ -23,4 +30,40 @@ private:
 public:
 	State Current_State;
 	State Previous_State;
+};
+
+class plst_grounded : State
+{
+	void Begin()
+	{
+
+	}
+
+	void Update()
+	{
+
+	}
+
+	void End()
+	{
+
+	}
+};
+
+class plst_airborne : State
+{
+	void Begin()
+	{
+
+	}
+
+	void Update()
+	{
+
+	}
+
+	void End()
+	{
+
+	}
 };
