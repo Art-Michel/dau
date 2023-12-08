@@ -19,13 +19,13 @@ void Init()
 	entity3 = Entity();
 	player = Player();
 
-	player.init(vec2(400, 400), ".\\Sprites\\char.png");
+	player.init(vec2(500, 400), ".\\Sprites\\char.png");
 	auto* ent = static_cast<Entity*>(&player);
-	EntitiesManager::GetInstance()->entities.push_back(ent);
+	EntitiesManager::GetInstance()->entities.push_back(ent); 
 
-	entity.init(vec2(500, 500), ".\\Sprites\\Square.png");
-	entity2.init(vec2(500, 600), ".\\Sprites\\Square.png");
-	entity3.init(vec2(600, 600), ".\\Sprites\\Square.png");
+	entity.init(vec2(500, 32), ".\\Sprites\\Square.png");
+	entity2.init(vec2(564, 32), ".\\Sprites\\Square.png");
+	entity3.init(vec2(628, 32), ".\\Sprites\\Square.png");
 	EntitiesManager::GetInstance()->entities.push_back(&entity);
 	EntitiesManager::GetInstance()->entities.push_back(&entity2);
 	EntitiesManager::GetInstance()->entities.push_back(&entity3);

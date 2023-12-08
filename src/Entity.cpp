@@ -29,6 +29,17 @@ void Entity::draw()
 	sprite_->Draw();
 }
 
+vec2 Entity::snap_pos() //Unused, that sucks
+{
+	float m = Pos.x / 8.0f;
+	m = roundf(m);
+	m = 8.0f * m;
+	float n = Pos.y / 8.0f;
+	n = roundf(n);
+	n = 8.0f * n;
+	return { m, n };
+}
+
 float Entity::Dist_to_player() const
 {
 	return (EntitiesManager::GetInstance()->entities[0]->Pos - this->Pos).magnitude();

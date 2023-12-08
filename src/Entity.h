@@ -25,4 +25,5 @@ protected:
 	CSimpleSprite* sprite_;
 	//std::unique_ptr<CSimpleSprite> sprite_;
 	float speed_;
+	vec2 snap_pos();
 };

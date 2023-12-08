@@ -28,9 +28,6 @@
     <ClCompile Include="DAU.cpp">
       <Filter>Source Code\Game</Filter>
     </ClCompile>
-    <ClCompile Include="player.cpp">
-      <Filter>Source Code\Entities</Filter>
-    </ClCompile>
     <ClCompile Include="tile.cpp">
       <Filter>Source Code\Entities</Filter>
     </ClCompile>
@@ -63,6 +60,12 @@
     </ClCompile>
     <ClCompile Include="imgui\imgui_widgets.cpp">
       <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="player.cpp">
+      <Filter>Source Code\Entities\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="FSM.cpp">
+      <Filter>Source Code\Entities\Player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -99,9 +102,6 @@
     <ClInclude Include="tile.h">
       <Filter>Source Code\Entities</Filter>
     </ClInclude>
-    <ClInclude Include="player.h">
-      <Filter>Source Code\Entities</Filter>
-    </ClInclude>
     <ClInclude Include="entity.h">
       <Filter>Source Code\Entities</Filter>
     </ClInclude>
@@ -135,6 +135,9 @@
     <ClInclude Include="imgui\imstb_textedit.h">
       <Filter>imgui</Filter>
     </ClInclude>
+    <ClInclude Include="player.h">
+      <Filter>Source Code\Entities\Player</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Code">
@@ -151,6 +154,9 @@
     </Filter>
     <Filter Include="imgui">
       <UniqueIdentifier>{8250a0a7-e73a-4e23-9196-2ad35cbd19d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Code\Entities\Player">
+      <UniqueIdentifier>{a754bf43-9d59-4e1a-9c69-7f29aafaf650}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
