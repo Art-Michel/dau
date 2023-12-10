@@ -21,7 +21,9 @@ public:
 private:
 
 public:
-	state(int name, Player* plpt)
+	state() = default;
+
+	virtual void init(int name, Player* plpt)
 	{
 		Name = name;
 		player = plpt;
@@ -37,7 +39,11 @@ public:
 class plst_grounded : state
 {
 public:
-	plst_grounded(int name, Player* plpt) : state::state(state_list::GROUNDED, plpt) {}
+	void init(Player* plpt)
+	{
+		player = plpt;
+		Name = state_list::GROUNDED;
+	}
 
 	void Begin()
 	{
@@ -59,7 +65,11 @@ public:
 class plst_airborne : state
 {
 public:
-	plst_airborne(int name, Player* plpt) : state::state(state_list::AIRBORNE, plpt) {}
+	void init(Player* plpt)
+	{
+		player = plpt;
+		Name = state_list::AIRBORNE;
+	}
 
 	void Begin() 
 	{
@@ -92,8 +102,7 @@ private:
 	void init(Player* playerpointer)
 	{
 		player = playerpointer;
-		plst_grounded* st1 = new plst_grounded(state_list::GROUNDED, playerpointer);
-		add_state(player, st1);
+		add_state(player, reinterpret_cast<state*>(new plst_grounded()));
 	}
 
 public:
@@ -104,6 +113,6 @@ public:
 
 	void change_state()
 	{
-		state next_state = states[state_list::NULLSTATE];
+		state* next_state = states[state_list::NULLSTATE];
 	}
 };
