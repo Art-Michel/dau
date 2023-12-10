@@ -105,3 +105,8 @@ void Player::resolve_collision(const Entity& entity)
 		this->velocity_ = this->velocity_ + dir2.normalized() * this->velocity_.magnitude();
 	}
 }
+
+void Player::AddGravity(float delta)
+{
+	
+}

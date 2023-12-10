@@ -4,6 +4,8 @@
 #include "inputs.h"
 #include "entity.h"
 
+class FSM;
+
 class Player : public Entity
 {
 public:
@@ -12,6 +14,7 @@ public:
 private:
 	Inputs inputs;
 	bool colliding;
+	FSM* fsm;
 
 public:
 	void init(const vec2& pos, const char* path) override;
@@ -23,4 +26,5 @@ private:
 	void check_collisions();
 	bool collided_with(const Entity& entity);
 	void resolve_collision(const Entity& entity);
+	void AddGravity(float delta);
 };
