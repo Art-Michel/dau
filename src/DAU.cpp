@@ -17,7 +17,7 @@ void Init()
 	entity = Entity();
 	entity2 = Entity();
 	entity3 = Entity();
-	player = Player();
+	//player = Player();
 
 	player.init(vec2(500, 400), ".\\Sprites\\char.png");
 	auto* ent = static_cast<Entity*>(&player);

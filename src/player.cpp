@@ -5,6 +5,10 @@
 #include <algorithm>
 #include "EntitiesManager.h"
 
+Player::Player():fsm(*this)
+{
+	
+}
 
 void Player::init(const vec2& pos, const char* path)
 {
@@ -34,12 +38,12 @@ void Player::draw()
 	App::Print(100, 80, ("Vel Y= " + std::to_string(velocity_.y)).c_str());
 
 	#pragma region 	//Print si on collisionne DEPRECATED, NE PRINTERA JAMAIS TRUE
-	//{
-	//	std::string mario = "Colliding: ";
-	//	mario += std::to_string(colliding);
-	//	App::Print(Pos.x - 50, Pos.y + 50, mario.c_str());
-	//	App::Print(Pos.x - 50, Pos.y + 100, (std::to_string((int)Pos.x) + " " + std::to_string((int)Pos.y)).c_str());
-	//}
+	{
+		std::string mario = "Colliding: ";
+		mario += std::to_string(colliding);
+		App::Print(Pos.x - 50, Pos.y + 50, mario.c_str());
+		App::Print(Pos.x - 50, Pos.y + 100, (std::to_string((int)Pos.x) + " " + std::to_string((int)Pos.y)).c_str());
+	}
 	#pragma endregion
 
 	#pragma region 	//Print les entités par ordre de distance au joueur

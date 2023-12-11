@@ -3,17 +3,17 @@
 #include "core.h"
 #include "inputs.h"
 #include "entity.h"
-class FSM;
+#include "FSM.h"
 
 class Player : public Entity
 {
 public:
-	Player() = default;
+	Player();
 
 private:
 	Inputs inputs;
 	bool colliding;
-	FSM* fsm;
+	FSM fsm;
 
 public:
 	void init(const vec2& pos, const char* path) override;

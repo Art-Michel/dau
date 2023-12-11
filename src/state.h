@@ -1,6 +1,5 @@
 #pragma once
 #include "stdafx.h"
-#include "player.h"
 
 struct state_list
 {
@@ -8,22 +7,23 @@ struct state_list
 	static const int AIRBORNE = 1;
 };
 
+class Player;
 class state
 {
-	public:
-		Player* player;
-		int Name;
+public:
+	Player& player;
+	int Name;
 
-	private:
+private:
 
-	public:
-		state() = default;
+public:
+	state(Player& plpt) :player(plpt) {}
 
-		virtual void init(int name, Player* plpt);
-		virtual ~state() = default;
+	virtual void init(int name, Player* plpt);
+	virtual ~state() = default;
 
-		virtual void Begin(){}
-		virtual void Update(){}
-		virtual void End(){}
+	virtual void Begin() {}
+	virtual void Update() {}
+	virtual void End() {}
 };
 

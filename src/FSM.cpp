@@ -5,16 +5,15 @@
 #include "FSM.h"
 #include "playerstates.h"
 
-void FSM::init(Player* playerpointer)
+FSM::FSM(Player& pl) :player(pl)
 {
-	player = playerpointer;
-	add_state(player, new plst_grounded());
-	add_state(player, new plst_airborne());
+	add_state(std::make_unique<plst_grounded>(player));
+	add_state(std::make_unique<plst_airborne>(player));
 }
 
-void FSM::add_state(Player* playerpointer, state* st)
+void FSM::add_state(std::unique_ptr<state>&& st)
 {
-
+	states.try_emplace(st->Name, std::move(st));
 }
 
 void FSM::change_state()
