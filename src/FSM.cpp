@@ -8,8 +8,8 @@
 void FSM::init(Player* playerpointer)
 {
 	player = playerpointer;
-	add_state(player, reinterpret_cast<state*>(new plst_grounded()));
-	add_state(player, reinterpret_cast<state*>(new plst_airborne()));
+	add_state(player, new plst_grounded());
+	add_state(player, new plst_airborne());
 }
 
 void FSM::add_state(Player* playerpointer, state* st)

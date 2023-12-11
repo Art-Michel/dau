@@ -2,7 +2,7 @@
 #include "stdafx.h"
 #include "state.h"
 
-class plst_grounded : state
+class plst_grounded : public state
 {
 public:
 	void Begin();
@@ -10,7 +10,7 @@ public:
 	void End();
 };
 
-class plst_airborne : state
+class plst_airborne : public state
 {
 public:
 	void Begin();

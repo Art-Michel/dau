@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "State.h"
+#include "state.h"
 
 void state::init(int name, Player* plpt)
 {
