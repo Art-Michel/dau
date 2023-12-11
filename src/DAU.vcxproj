@@ -194,6 +194,7 @@
     <ClInclude Include="core.h" />
     <ClInclude Include="EntitiesManager.h" />
     <ClInclude Include="entity.h" />
+    <ClInclude Include="FSM.h" />
     <ClInclude Include="imgui\backends\imgui_impl_glut.h" />
     <ClInclude Include="imgui\imconfig.h" />
     <ClInclude Include="imgui\imgui.h" />
@@ -204,6 +205,8 @@
     <ClInclude Include="imgui\misc\cpp\imgui_stdlib.h" />
     <ClInclude Include="inputs.h" />
     <ClInclude Include="player.h" />
+    <ClInclude Include="playerstates.h" />
+    <ClInclude Include="state.h" />
     <ClInclude Include="stb_image\stb_image.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
@@ -229,6 +232,8 @@
     <ClCompile Include="inputs.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="FSM.cpp" />
+    <ClCompile Include="playerstates.cpp" />
+    <ClCompile Include="state.cpp" />
     <ClCompile Include="stb_image\stb_image.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

@@ -3,7 +3,6 @@
 #include "core.h"
 #include "inputs.h"
 #include "entity.h"
-
 class FSM;
 
 class Player : public Entity

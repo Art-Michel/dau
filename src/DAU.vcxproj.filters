@@ -67,6 +67,12 @@
     <ClCompile Include="FSM.cpp">
       <Filter>Source Code\Entities\Player</Filter>
     </ClCompile>
+    <ClCompile Include="state.cpp">
+      <Filter>Source Code\Entities\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="playerstates.cpp">
+      <Filter>Source Code\Entities\Player</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App\app.h">
@@ -136,6 +142,15 @@
       <Filter>imgui</Filter>
     </ClInclude>
     <ClInclude Include="player.h">
+      <Filter>Source Code\Entities\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="FSM.h">
+      <Filter>Source Code\Entities\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="state.h">
+      <Filter>Source Code\Entities\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="playerstates.h">
       <Filter>Source Code\Entities\Player</Filter>
     </ClInclude>
   </ItemGroup>
